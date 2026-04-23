@@ -1,0 +1,32 @@
+---
+const diffs = [
+  { title: 'Qualidade Superior', desc: 'Trabalhamos apenas com as melhores marcas e materiais rigorosamente selecionados.' },
+  { title: 'Atendimento Especializado', desc: 'Nossa equipe é formada por especialistas prontos para te ajudar a encontrar a melhor solução.' },
+  { title: 'Amplo Estoque', desc: 'Milhares de itens à pronta entrega para não atrasar seu projeto.' },
+  { title: 'Entrega Confiável', desc: 'Compromisso com prazos e cuidado no transporte.' },
+  { title: 'Parceria de Verdade', desc: 'Mais que um fornecedor, um parceiro para o seu crescimento.' },
+];
+---
+<section class="px-4 py-16 md:px-8 md:py-24 lg:px-16 bg-primary">
+  <div class="max-w-7xl mx-auto scroll-fade">
+    <div class="text-center mb-12">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
+        Por que a Mar Mad é a Escolha Certa para Você?
+      </h2>
+      <p class="text-white/80 max-w-2xl mx-auto">
+        Construímos nossa reputação baseada em valores fundamentais que nos diferenciam e garantem a satisfação dos nossos clientes.
+      </p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      {diffs.map(d => (
+        <div class="rounded-xl p-6" style="background:rgba(255,255,255,0.1)">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background:rgba(255,255,255,0.2)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3 class="font-heading font-semibold text-lg mb-2 text-white">{d.title}</h3>
+          <p class="text-white/80 text-sm">{d.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

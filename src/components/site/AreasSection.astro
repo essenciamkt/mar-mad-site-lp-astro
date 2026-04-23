@@ -1,0 +1,27 @@
+---
+const areas = [
+  { title: 'MARCENARIA', image: '/images/area-marcenaria.jpg', items: ['MDF', 'Compensados', 'Ferragens e Acessórios', 'Madeiras nobres', 'Pinus seco'] },
+  { title: 'CONSTRUÇÃO CIVIL', image: '/images/area-construcao.jpg', items: ['Telhados (Madeiras, telhas, calhas e acessórios)', 'Madeirites resinado e plastificado', 'Pinus (tábua, sarrafo e perna)', 'Decks, assoalhos e forros', 'Portas, caixonetes e ferragens'] },
+  { title: 'LOJISTA - CONSTRUÇÃO', image: '/images/area-lojista.jpg', items: ['Pinus', 'Madeiras para telhado', 'Escadas', 'Caixonetes'] },
+  { title: 'CENOGRAFIA & EVENTOS', image: '/images/area-cenografia.jpg', items: ['Compensados', 'Madeirites', 'Pinus seco', 'Colas diversas'] },
+];
+---
+<section class="section-green-gradient py-16 md:py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8">
+    <h2 class="text-3xl md:text-4xl font-heading font-bold text-center text-white italic mb-12">
+      Áreas de Atuação
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {areas.map(area => (
+        <div class="area-card scroll-fade">
+          <img src={area.image} alt={area.title} class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+          <div class="area-card-overlay">
+            <h3 class="font-heading font-bold text-lg uppercase tracking-wide text-white mb-3">{area.title}</h3>
+            <div class="w-12 h-0.5 bg-white/60 mb-3"></div>
+            {area.items.map(item => <p class="text-white/90 text-sm">{item}</p>)}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

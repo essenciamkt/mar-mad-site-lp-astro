@@ -1,0 +1,45 @@
+---
+const products = [
+  { img: '/lovable-uploads/b76104cd-d213-4449-98b8-d8f21a286d03.png', title: 'Madeiras', desc: 'MDF, MDP, Compensados, Maciças de alta qualidade' },
+  { img: '/lovable-uploads/5f1e2db4-8584-4198-a40b-628babaa9da7.png', title: 'Ferragens e Acessórios', desc: 'Dobradiças, corrediças, puxadores e sistemas de montagem' },
+  { img: '/lovable-uploads/2fa910ee-5711-45d7-8187-6a2cd7ddb489.png', title: 'Ferramentas', desc: 'Equipamentos e ferramentas para marcenaria profissional' },
+  { img: '/lovable-uploads/4dbc0521-ceec-4fb5-a61e-ae6dd629d24d.png', title: 'Revestimentos e Acabamentos', desc: 'Fitas de borda, vernizes, tintas e laminados decorativos' },
+];
+const services = [
+  { title: 'Plano de Corte', desc: 'Otimização de cortes para reduzir desperdício em seus projetos' },
+  { title: 'Fitagem de Bordas', desc: 'Acabamento perfeito com fitas de borda aplicadas com precisão' },
+  { title: 'Entrega Programada', desc: 'Entregas agendadas conforme seu cronograma de produção' },
+];
+---
+<section id="produtos" class="px-4 py-16 md:px-8 md:py-24 lg:px-16 bg-section-light">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12 scroll-fade">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">Explore Nossos Produtos e Serviços</h2>
+      <p class="text-muted-foreground max-w-2xl mx-auto">Tudo o que você precisa para seus projetos de marcenaria em um só lugar, com qualidade garantida e preços competitivos.</p>
+    </div>
+    <h3 class="font-heading text-xl font-bold text-foreground mb-6">Produtos em Destaque</h3>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 scroll-fade">
+      {products.map(p => (
+        <div class="bg-card rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow">
+          <img src={p.img} alt={p.title} class="w-full h-48 object-cover" loading="lazy" width="300" height="200" />
+          <div class="p-4">
+            <h4 class="font-heading font-semibold text-foreground mb-1">{p.title}</h4>
+            <p class="text-muted-foreground text-sm">{p.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+    <h3 id="servicos" class="font-heading text-xl font-bold text-foreground mb-6">Serviços Oferecidos</h3>
+    <div class="grid md:grid-cols-3 gap-6 scroll-fade">
+      {services.map(s => (
+        <div class="bg-card border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h4 class="font-heading font-semibold text-foreground mb-2">{s.title}</h4>
+          <p class="text-muted-foreground text-sm">{s.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

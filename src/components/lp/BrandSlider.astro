@@ -1,0 +1,28 @@
+---
+const brands = [
+  { name: 'JOELINI', logo: '/brands/joelini.png' },
+  { name: 'DURATEX', logo: '/brands/duratex.png' },
+  { name: 'FORMICA', logo: '/brands/formica.png' },
+  { name: 'FGV Brasil', logo: '/brands/fgv.jpg' },
+  { name: 'HÄFELE', logo: '/brands/hafele.png' },
+  { name: 'ITALYLINE', logo: '/brands/italyline.png' },
+  { name: 'PAUMA', logo: '/brands/pauma.png' },
+  { name: 'ROMETAL', logo: '/brands/rometal.png' },
+  { name: 'BERNECK', logo: '/brands/berneck.png' },
+];
+const doubled = [...brands, ...brands];
+---
+<section class="py-16 bg-white overflow-hidden">
+  <div class="max-w-7xl mx-auto scroll-fade">
+    <h3 class="font-heading text-xl font-bold text-foreground text-center mb-10">Principais Fornecedores</h3>
+  </div>
+  <div class="relative overflow-hidden">
+    <div class="flex animate-scroll-left" style="width:max-content">
+      {doubled.map((b, i) => (
+        <div class="flex-shrink-0 w-48 h-20 mx-4 bg-white border border-gray-200 rounded-xl flex items-center justify-center px-6 group">
+          <img src={b.logo} alt={b.name} class="max-h-14 max-w-full object-contain grayscale opacity-60 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100" loading="lazy" />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

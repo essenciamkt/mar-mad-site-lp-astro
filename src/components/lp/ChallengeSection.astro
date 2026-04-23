@@ -1,0 +1,35 @@
+---
+const challenges = [
+  { title: 'Dificuldade em encontrar materiais de qualidade?', desc: 'Na Mar Mad, você encontra produtos rigorosamente selecionados das melhores marcas do mercado.' },
+  { title: 'Prazos apertados e entregas que não cumprem?', desc: 'Garantimos entregas no prazo e com total cuidado para não comprometer seu cronograma.' },
+  { title: 'Falta de suporte técnico especializado?', desc: 'Conte com nossa equipe de especialistas para orientações precisas sobre o melhor material para cada projeto.' },
+];
+---
+<section id="desafios" class="px-4 py-16 md:px-8 md:py-24 lg:px-16 bg-white">
+  <div class="max-w-7xl mx-auto scroll-fade">
+    <div class="text-center mb-12">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+        Sabemos os Desafios da Marcenaria
+      </h2>
+      <p class="text-muted-foreground max-w-2xl mx-auto">
+        Entendemos as dificuldades enfrentadas pelos marceneiros e oferecemos soluções práticas para ajudá-lo a superá-las.
+      </p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+      {challenges.map(c => (
+        <div class="bg-card border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          </div>
+          <h3 class="font-heading font-semibold text-lg mb-2 text-foreground">{c.title}</h3>
+          <p class="text-muted-foreground text-sm">{c.desc}</p>
+        </div>
+      ))}
+    </div>
+    <div class="text-center">
+      <a href="#produtos" class="inline-block bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+        Conheça Nossas Soluções
+      </a>
+    </div>
+  </div>
+</section>

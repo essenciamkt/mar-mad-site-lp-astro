@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Site theme ── */
+:root {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 20%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 20%;
+  --primary: 140 55% 35%;
+  --primary-foreground: 0 0% 100%;
+  --primary-dark: 140 55% 28%;
+  --secondary: 140 20% 95%;
+  --secondary-foreground: 140 55% 35%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 45%;
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --ring: 140 55% 35%;
+  --radius: 0.5rem;
+  --section-green: 140 55% 35%;
+  --section-green-dark: 140 60% 25%;
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground antialiased; font-family: 'Open Sans', sans-serif; }
+  h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; }
+}
+
+@layer components {
+  .section-green-gradient {
+    background: linear-gradient(135deg, hsl(var(--section-green)) 0%, hsl(var(--section-green-dark)) 100%);
+    color: hsl(var(--primary-foreground));
+  }
+  .motivo-card { @apply bg-card rounded-lg border-2 p-6 text-center; border-color: hsl(var(--primary) / 0.2); }
+  .contact-icon { @apply w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); }
+  .area-card { @apply relative rounded-lg overflow-hidden h-64; }
+  .area-card-overlay { @apply absolute inset-0 p-6 flex flex-col justify-center; background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3)); }
+}
+
+/* ── LP Marceneiros theme ── */
+.lp-marceneiros {
+  --primary: 152 55% 38%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 152 30% 95%;
+  --secondary-foreground: 152 55% 25%;
+  --foreground: 210 20% 15%;
+  --muted: 150 15% 96%;
+  --muted-foreground: 210 10% 45%;
+  --border: 210 15% 90%;
+  --card: 0 0% 100%;
+  --card-foreground: 210 20% 15%;
+  --radius: 0.75rem;
+  --section-light: 150 20% 97%;
+  font-family: 'Inter', sans-serif;
+}
+.lp-marceneiros h1,.lp-marceneiros h2,.lp-marceneiros h3,.lp-marceneiros h4 { font-family: 'Poppins', sans-serif; }
+
+@layer utilities {
+  .section-padding { @apply px-4 py-16 md:px-8 md:py-24 lg:px-16; }
+  .container-main { @apply max-w-7xl mx-auto; }
+  .bg-section-light { background-color: hsl(var(--section-light, 0 0% 97%)); }
+  .bg-card { background-color: hsl(var(--card)); color: hsl(var(--card-foreground)); }
+  .text-primary { color: hsl(var(--primary)); }
+  .text-primary-foreground { color: hsl(var(--primary-foreground)); }
+  .text-foreground { color: hsl(var(--foreground)); }
+  .text-muted-foreground { color: hsl(var(--muted-foreground)); }
+  .bg-primary { background-color: hsl(var(--primary)); }
+  .bg-secondary { background-color: hsl(var(--secondary)); }
+  .border-border { border-color: hsl(var(--border)); }
+  .bg-section-green-dark { background-color: hsl(var(--section-green-dark)); }
+}
+
+/* ── Scroll fade animation ── */
+.scroll-fade { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+.scroll-fade.visible { opacity: 1; transform: translateY(0); }

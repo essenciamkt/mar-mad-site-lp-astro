@@ -1,0 +1,43 @@
+---
+---
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+  <div class="max-w-7xl mx-auto flex items-center justify-between h-16 px-4 md:px-8">
+    <a href="#hero">
+      <img alt="Mar Mad Madeiras" class="h-10" src="/lovable-uploads/82029b59-a5d4-487f-b0d4-f97b15f0ec69.png" />
+    </a>
+    <div class="hidden md:flex items-center gap-10">
+      <a href="#hero" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Início</a>
+      <a href="#desafios" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Sobre</a>
+      <a href="#produtos" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Produtos</a>
+      <a href="#servicos" class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">Serviços</a>
+      <a href="#contato" class="bg-primary text-white px-5 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity">Fale Conosco</a>
+    </div>
+    <button id="menu-btn" class="md:hidden" aria-label="Abrir menu">
+      <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-4 pb-4">
+    <a href="#hero" class="block py-2 text-sm font-medium text-gray-700 hover:text-primary">Início</a>
+    <a href="#desafios" class="block py-2 text-sm font-medium text-gray-700 hover:text-primary">Sobre</a>
+    <a href="#produtos" class="block py-2 text-sm font-medium text-gray-700 hover:text-primary">Produtos</a>
+    <a href="#servicos" class="block py-2 text-sm font-medium text-gray-700 hover:text-primary">Serviços</a>
+    <a href="#contato" class="block mt-2 bg-primary text-white px-5 py-2 rounded-lg text-sm font-semibold text-center">Fale Conosco</a>
+  </div>
+</nav>
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const iconMenu = document.getElementById('icon-menu');
+  const iconClose = document.getElementById('icon-close');
+  btn?.addEventListener('click', () => {
+    const open = menu?.classList.toggle('hidden') === false;
+    iconMenu?.classList.toggle('hidden', open);
+    iconClose?.classList.toggle('hidden', !open);
+  });
+  menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.add('hidden');
+    iconMenu?.classList.remove('hidden');
+    iconClose?.classList.add('hidden');
+  }));
+</script>
